@@ -17,8 +17,20 @@ public class App {
                 test.CreateStudent();
             } else if ("class".equals(line)) {
                 test.CreateClass();
-            } else if ("assign".equals(line)) {
-                System.out.println("TBI");
+            }
+            else if("assign".equals(line)) {
+                test.AssignClasses();
+            }
+
+            else if("session".equals(line)) {
+                //test.createSessions();
+            }
+
+            else if("mark".equals(line)) {
+                //test.markAttendance();
+            }
+            else if("close".equals(line)) {
+                break;
             }
         }
     }

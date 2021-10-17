@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Student {
-    private int Id=0;
+    private int Id;
     private String Name;
     private String Dob;
     private String JoninedDate;
@@ -14,6 +14,9 @@ public class Student {
     public Student() {
 
         Scanner in = new Scanner(System.in);
+
+        System.out.print("Enter student Id: ");
+        this.Id = Integer.valueOf(in.nextLine());
 
         System.out.print("Enter student first name: ");
         this.Name = in.nextLine();
@@ -25,6 +28,13 @@ public class Student {
         this.JoninedDate = in.nextLine();
 
         setStudentId();
+    }
+
+    public Student(int id, String name, String dob, String joninedDate) {
+        Id = id;
+        Name = name;
+        Dob = dob;
+        JoninedDate = joninedDate;
     }
 
     public void setStudentId() {
