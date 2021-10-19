@@ -11,7 +11,7 @@ import static org.mockito.Mockito.*;
 public class SDataBaseTest {
 
     @Test
-    public void should_returnEmpty_when_storeIscreated() {
+    public void should_returnEmpty_when_storeIsCreated() {
        InMemoryStudentDB inMemoryStudentDB = new InMemoryStudentDB();
         assertThat(inMemoryStudentDB.getStudents(),is(empty()));
     }

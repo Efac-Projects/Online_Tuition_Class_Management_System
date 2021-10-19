@@ -5,28 +5,28 @@ import Session.Session;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class AttendanceService {
-    public AttendanceService() {
-    }
 
     InMemortAttedanceDb inMemortAttedanceDb = new InMemortAttedanceDb();
+    final Logger logger = Logger.getLogger(String.valueOf(AttendanceService.class));
 
     public void markAttendance() {
-        System.out.println(" Mark attendance");
+        logger.info("Mark attendance");
         Scanner in = new Scanner(System.in);
 
-        System.out.println(" Enter date");
+        logger.info("Enter date");
         String Date = in.nextLine();
 
-        System.out.println(" Enter Time Range");
+        logger.info("Enter Time Range");
         String TimeRange = in.nextLine();
 
         Session session1 = new Session(Date, TimeRange);
 
         List<String> presentStudents = new ArrayList<>();
 
-        System.out.println("Please enter all present studnet' names in the session, when you finish type 'close'");
+        logger.info("Please enter all present studnet' names in the session, when you finish type 'close'");
 
         while (in.hasNext()) {
             String line = in.nextLine();
@@ -39,6 +39,6 @@ public class AttendanceService {
         }
 
         inMemortAttedanceDb.store(session1,presentStudents);
-        System.out.println("Student.Student attandance is recorded");
+        logger.info("Student.Student attandance is recorded");
     }
 }

@@ -17,7 +17,7 @@ class AttendanceDBTest {
     @Test
     public void should_returnEmpty_when_storeIsCreated() {
         InMemortAttedanceDb inMemortAttedanceDb = new InMemortAttedanceDb();
-        assertThat(inMemortAttedanceDb.getAttandance(), Matchers.anEmptyMap());
+        assertThat(inMemortAttedanceDb.getAttendance(), Matchers.anEmptyMap());
     }
 
     @Test
@@ -27,7 +27,7 @@ class AttendanceDBTest {
         List<String> names = Arrays.asList("Anuradha", "Kethaki", "Thilina");
         inMemortAttedanceDb.store(session,names);
 
-        assertThat(inMemortAttedanceDb.getAttandance().size(), is(1) );
+        assertThat(inMemortAttedanceDb.getAttendance().size(), is(1) );
     }
 
 
@@ -38,9 +38,9 @@ class AttendanceDBTest {
         List<String> names = Arrays.asList("Anuradha", "Kethaki", "Thilina");
         inMemortAttedanceDb.store(session,names);
 
-        assertThat(inMemortAttedanceDb.getAttandance(), IsMapContaining.hasEntry(session,names));
-        assertThat(inMemortAttedanceDb.getAttandance(), IsMapContaining.hasKey(session));
-        assertThat(inMemortAttedanceDb.getAttandance(), IsMapContaining.hasValue(names));
+        assertThat(inMemortAttedanceDb.getAttendance(), IsMapContaining.hasEntry(session,names));
+        assertThat(inMemortAttedanceDb.getAttendance(), IsMapContaining.hasKey(session));
+        assertThat(inMemortAttedanceDb.getAttendance(), IsMapContaining.hasValue(names));
     }
 
     @Test
@@ -54,13 +54,13 @@ class AttendanceDBTest {
         inMemortAttedanceDb.store(session1,names1);
         inMemortAttedanceDb.store(session2,names2);
 
-        assertThat(inMemortAttedanceDb.getAttandance(), IsMapContaining.hasEntry(session1,names1));
-        assertThat(inMemortAttedanceDb.getAttandance(), IsMapContaining.hasEntry(session2,names2));
+        assertThat(inMemortAttedanceDb.getAttendance(), IsMapContaining.hasEntry(session1,names1));
+        assertThat(inMemortAttedanceDb.getAttendance(), IsMapContaining.hasEntry(session2,names2));
 
-        assertThat(inMemortAttedanceDb.getAttandance(), IsMapContaining.hasKey(session1));
-        assertThat(inMemortAttedanceDb.getAttandance(), IsMapContaining.hasValue(names1));
+        assertThat(inMemortAttedanceDb.getAttendance(), IsMapContaining.hasKey(session1));
+        assertThat(inMemortAttedanceDb.getAttendance(), IsMapContaining.hasValue(names1));
 
-        assertThat(inMemortAttedanceDb.getAttandance(), IsMapContaining.hasKey(session2));
-        assertThat(inMemortAttedanceDb.getAttandance(), IsMapContaining.hasValue(names2));
+        assertThat(inMemortAttedanceDb.getAttendance(), IsMapContaining.hasKey(session2));
+        assertThat(inMemortAttedanceDb.getAttendance(), IsMapContaining.hasValue(names2));
     }
 }

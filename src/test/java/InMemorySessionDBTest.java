@@ -1,16 +1,10 @@
 
-
 import Class.SClass;
 import Class.ClassService;
-import ClassAssignment.ClassAssignmentService;
-import Student.Student;
+
 import Session.Session;
 import Session.InMemorySessionDB;
 import org.hamcrest.collection.IsMapContaining;
-
-import Session.InMemorySessionDB;
-import Session.Session;
-
 
 import org.junit.jupiter.api.Test;
 
@@ -18,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.contains;
+
 import static org.hamcrest.Matchers.*;
 import static org.mockito.Mockito.*;
 
@@ -35,7 +29,7 @@ public class InMemorySessionDBTest {
     }
 
     @Test
-    void name() {
+    void should_storeSessions_when_SessionisGiven() {
 
         ClassService classes = mock(ClassService.class);
         doNothing().when(classes).CreateClass();

@@ -1,6 +1,9 @@
 package Class;
 
+import Attendance.AttendanceService;
+
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 
 public class SClass {
@@ -8,16 +11,18 @@ public class SClass {
     private String Name;
     private String TeacherName;
 
+    final Logger logger = Logger.getLogger(String.valueOf(SClass.class));
+
     public SClass() {
         Scanner in = new Scanner(System.in);
 
-        System.out.print("Enter Class Year: ");
+        logger.info("Enter Class Year: ");
         this.Year = Integer.valueOf(in.nextLine());
 
-        System.out.print("Enter Class: ");
+        logger.info("Enter Class: ");
         this.Name = in.nextLine();
 
-        System.out.print("Enter Teacher Name: ");
+        logger.info("Enter Teacher Name: ");
         this.TeacherName = in.nextLine();
     }
 

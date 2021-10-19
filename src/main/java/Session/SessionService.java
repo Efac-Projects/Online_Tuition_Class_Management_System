@@ -1,44 +1,47 @@
 package Session;
 
+import ClassAssignment.ClassAssignmentService;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class SessionService {
-    public SessionService() {
-    }
+
     InMemorySessionDB inMemorySessionDB = new InMemorySessionDB();
+    final Logger logger = Logger.getLogger(String.valueOf(SessionService.class));
 
     public void createSession() {
-        System.out.println("Enter your class Year");
+        logger.info("Enter your class Year");
         Scanner in = new Scanner(System.in);
         String classYear = in.nextLine();
 
-        System.out.println("Enter your class Name");
+        logger.info("Enter your class Name");
         String className = in.nextLine();
 
-        System.out.println("Enter your class Grade-X");
+        logger.info("Enter your class Grade-X");
         String classGrade = in.nextLine();
 
         String fullName = classYear + "-" + className + "-" + classGrade;
 
 
-        System.out.println("Session.Session:'session', Close:'close' ");
+        logger.info("Session.Session:'session', Close:'close' ");
 
         while (in.hasNextLine()) {
             String line = in.nextLine();
             if("session".equals(line)) {
                 List<Session> dateTimeList = new ArrayList<>();
-                System.out.println("Date:'2021-10-24', time:'15:30PM to 17:30PM' ");
-                System.out.println("Enter date");
+                logger.info("Date:'2021-10-24', time:'15:30PM to 17:30PM' ");
+                logger.info("Enter date");
                 Scanner datetime = new Scanner(System.in);
                 String date = datetime.nextLine();
-                System.out.println("Enter time");
+                logger.info("Enter time");
                 String time = datetime.nextLine();
 
                 Session session1 = new Session(date, time);
                 dateTimeList.add(session1);
-                System.out.println("If you want to add another session Enter 'session' otherwise 'close'");
+                logger.info("If you want to add another session Enter 'session' otherwise 'close'");
                 inMemorySessionDB.storeSession(fullName,dateTimeList);
             }
             if("close".equals(line)) {

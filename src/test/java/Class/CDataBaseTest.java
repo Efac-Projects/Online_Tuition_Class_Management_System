@@ -2,7 +2,6 @@ package Class;
 
 import org.junit.jupiter.api.Test;
 
-import static java.util.Optional.empty;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.hamcrest.Matchers.*;

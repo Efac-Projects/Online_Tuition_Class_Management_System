@@ -1,15 +1,14 @@
 package Student;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class Student {
     private int Id;
     private String Name;
     private String Dob;
     private String JoninedDate;
+    final Logger logger = Logger.getLogger(String.valueOf(Student.class));
 
 
 
@@ -17,16 +16,16 @@ public class Student {
 
         Scanner in = new Scanner(System.in);
 
-        System.out.print("Enter student Id: ");
+        logger.info("Enter student Id: ");
         this.Id = Integer.valueOf(in.nextLine());
 
-        System.out.print("Enter student first name: ");
+        logger.info("Enter student first name: ");
         this.Name = in.nextLine();
 
-        System.out.print("Enter student date of birth: ");
+        logger.info("Enter student date of birth: ");
         this.Dob = in.nextLine();
 
-        System.out.print("Enter student' joined date: ");
+        logger.info("Enter student' joined date: ");
         this.JoninedDate = in.nextLine();
 
 
@@ -51,7 +50,7 @@ public class Student {
         return Dob;
     }
 
-    public String getJoninedDate() {
+    public String getJoinedDate() {
         return JoninedDate;
     }
 }

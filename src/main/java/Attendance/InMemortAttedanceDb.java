@@ -15,7 +15,7 @@ public class InMemortAttedanceDb implements AttendanceDB{
     }
 
     @Override
-    public Map<Session, List<String>> getAttandance() {
+    public Map<Session, List<String>> getAttendance() {
         return attendance;
     }
 }

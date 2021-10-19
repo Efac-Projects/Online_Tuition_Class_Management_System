@@ -1,14 +1,17 @@
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class App {
     public static void main(String[] args) {
 
         Admin test = new Admin();
-
+        final Logger logger = Logger.getLogger(String.valueOf(App.class));
+        String message = """
+                For create students enter 'create'\nFor create classes enter 'class'
+                For assign students enter 'assign'\nFor create session enter 'session'
+                For mark attendance enter 'mark' \nFor close application enter 'close'""";
         // Welcome section
-        System.out.println("For create students enter 'create'\nFor create classes enter 'class'\n" +
-                "For assign students enter 'assign'\nFor create session enter 'session'\n" +
-                "For mark attendance enter 'mark' \nFor close application enter 'close'");
+        logger.info(message);
 
         Scanner scanner = new Scanner(System.in);
 

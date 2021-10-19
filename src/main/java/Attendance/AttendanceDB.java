@@ -7,5 +7,5 @@ import java.util.Map;
 
 public interface AttendanceDB {
     void store(Session session, List<String> names);
-    Map<Session,List<String>> getAttandance();
+    Map<Session,List<String>> getAttendance();
 }

@@ -1,0 +1,5 @@
+SessionTest\SessionDataBaseTest.class
+Attendance\AttendanceDBTest.class
+Class\CDataBaseTest.class
+InMemorySessionDBTest.class
+StudentStoreTest\SDataBaseTest.class

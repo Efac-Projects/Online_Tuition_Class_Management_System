@@ -2,6 +2,7 @@ package SessionTest;
 
 import Session.InMemorySessionDB;
 import Session.Session;
+import org.hamcrest.collection.IsMapContaining;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -22,8 +23,11 @@ public class SessionDataBaseTest {
         sessions.add(session1);
         sessions.add(session2);
 
-        inMemorySessionDB.storeSession("Maths",sessions);
-       // assertThat(inMemorySessionDB.getSessions(),containsInAnyOrder("Maths",sessions));
+        inMemorySessionDB.storeSession("Physics",sessions);
+
+        assertThat(inMemorySessionDB.getSessions(), IsMapContaining.hasEntry("Physics",sessions));
+        assertThat(inMemorySessionDB.getSessions(), IsMapContaining.hasKey("Physics"));
+        assertThat(inMemorySessionDB.getSessions(), IsMapContaining.hasValue(sessions));
 
     }
 }

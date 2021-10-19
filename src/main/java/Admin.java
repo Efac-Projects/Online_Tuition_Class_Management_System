@@ -15,9 +15,6 @@ public class Admin {
     SessionService sessionService = new SessionService();
     AttendanceService attendanceService = new AttendanceService();
 
-    public Admin() {
-
-    }
 
     public void CreateStudent() {
        studentService.CreateStudent();

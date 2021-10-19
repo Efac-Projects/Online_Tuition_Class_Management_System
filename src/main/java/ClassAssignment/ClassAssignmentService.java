@@ -3,35 +3,35 @@ package ClassAssignment;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Logger;
+
 import Class.ClassService;
 import Student.StudentService;
 
 public class ClassAssignmentService {
 
 
-    public ClassAssignmentService(  ) {
 
-    }
 
     ClassService classService = new ClassService();
     StudentService studentService = new StudentService();
     InMemoryStudentAndClassDB inMemoryStudentAndClassDB = new InMemoryStudentAndClassDB();
-
+    final Logger logger = Logger.getLogger(String.valueOf(ClassAssignmentService.class));
 
 
     public void AssignClasses () {
-        System.out.println("Assign classes for students");
-        this.classService.getClasses().forEach((c) -> System.out.println(c.getName()));
-        System.out.println(" All students ");
-        this.studentService.getStudents().forEach((c) -> System.out.println(c.getId() + ":" + c.getName()));
+        logger.info("Assign classes for students");
+        this.classService.getClasses().forEach((c) -> logger.info(c.getName()));
+        logger.info(" All students ");
+        this.studentService.getStudents().forEach((c) -> logger.info(c.getId() + ":" + c.getName()));
 
-        System.out.println("-------------------------------");
 
-        System.out.println("Select a class");
+
+        logger.info("Select a class");
         Scanner in = new Scanner(System.in);
 
         String className = in.nextLine();
-        System.out.println("Assign student to this class. When you finish type 'close'");
+        logger.info("Assign student to this class. When you finish type 'close'");
 
         List<String> Students = new ArrayList<>();
         while (in.hasNextLine()) {
@@ -44,7 +44,7 @@ public class ClassAssignmentService {
         }
         inMemoryStudentAndClassDB.store(className,Students);
 
-        System.out.println("Studenta are succesfully assigned to classes");
+        logger.info("Studenta are succesfully assigned to classes");
 
     }
 }
