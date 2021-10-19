@@ -9,7 +9,7 @@ import static org.mockito.Mockito.*;
 public class SDataBaseTest {
 
     @Test
-    public void should_returnEmpty_when_storeIscreated() {
+    public void should_returnEmpty_when_storeIsCreated() {
         InMemoryStudentDB inMemoryStudentDB = new InMemoryStudentDB();
         assertThat(inMemoryStudentDB.getStudents(),is(empty()));
     }
@@ -35,9 +35,18 @@ public class SDataBaseTest {
     public void should_containAllStudent_when_moreStudentStored() {
         InMemoryStudentDB inMemoryStudentDB = new InMemoryStudentDB();
         Student student1 = new Student(1,"Saman","2005-10-22","2020-10-11");
-        Student student2 = new Student(1,"Sirimal","2008-10-22","2020-05-11");
+        Student student2 = new Student(2,"Sirimal","2008-10-22","2020-05-11");
         inMemoryStudentDB.store(student1);
         inMemoryStudentDB.store(student2);
         assertThat(inMemoryStudentDB.getStudents(),containsInAnyOrder(student1,student2));
+    }
+    @Test
+    public void should_findStudent_when_studentIdGiven(){
+        InMemoryStudentDB inMemoryStudentDB = new InMemoryStudentDB();
+        Student student1 = new Student(1,"Saman","2005-10-22","2020-10-11");
+
+        inMemoryStudentDB.store(student1);
+
+        assertThat(inMemoryStudentDB.findStudent(1), equalTo(student1.getName()));
     }
 }
