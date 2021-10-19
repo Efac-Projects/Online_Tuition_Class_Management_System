@@ -1,3 +1,5 @@
+package Student;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -7,7 +9,7 @@ public class Student {
     private int Id;
     private String Name;
     private String Dob;
-    private String JoinedDate;
+    private String JoninedDate;
 
 
 
@@ -25,23 +27,17 @@ public class Student {
         this.Dob = in.nextLine();
 
         System.out.print("Enter student' joined date: ");
-        this.JoinedDate = in.nextLine();
+        this.JoninedDate = in.nextLine();
 
-        setStudentId();
+
     }
 
     public Student(int id, String name, String dob, String joninedDate) {
         Id = id;
         Name = name;
         Dob = dob;
-        JoinedDate = joninedDate;
+        JoninedDate = joninedDate;
     }
-
-    public void setStudentId() {
-        Random random = new Random();
-        this.Id = random.nextInt() ;
-    }
-
 
     public int getId() {
         return Id;
@@ -55,7 +51,7 @@ public class Student {
         return Dob;
     }
 
-    public String getJoinedDate() {
-        return JoinedDate;
+    public String getJoninedDate() {
+        return JoninedDate;
     }
 }

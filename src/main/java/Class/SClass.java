@@ -1,4 +1,7 @@
+package Class;
+
 import java.util.Scanner;
+
 
 public class SClass {
     private int Year;
@@ -16,6 +19,12 @@ public class SClass {
 
         System.out.print("Enter Teacher Name: ");
         this.TeacherName = in.nextLine();
+    }
+
+    public SClass(int year, String name, String teacherName) {
+        Year = year;
+        Name = name;
+        TeacherName = teacherName;
     }
 
     public int getYear() {
