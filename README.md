@@ -15,3 +15,7 @@ Expectation:
 3. SonarQube analysis should be done and resolve all the reported issues.
 4. Everyone should contribute via GitHub and the project should be hosted in Github.
 5. Plagiarism will be treated as an offense.
+
+## SonarQube 
+
+![alt text](https://github.com/Efac-Projects/Online_Tuition_Class_Management_System/blob/master/Sonar%201.png)
