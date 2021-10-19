@@ -57,7 +57,7 @@ class InMemorySessionDBTest {
         String sessionName2="sessionName";
         inMemorySessionDB.storeSession(sessionName1,Sessions1);
         inMemorySessionDB.storeSession(sessionName2,Sessions2);
-        assertThat(inMemorySessionDB.getSessions(),containsInAnyOrder(session1,session2));
+        assertThat(inMemorySessionDB.getSessions(),containsInAnyOrder(Sessions1,Sessions2));
 
     }
 }
