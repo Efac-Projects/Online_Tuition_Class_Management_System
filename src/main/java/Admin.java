@@ -14,7 +14,7 @@ public class Admin {
         System.out.println("Student is created\n"+student.getId()+
                 "\n" + student.getName()+
                 "\n" + student.getDob()+
-                "\n" + student.getJoninedDate());
+                "\n" + student.getJoinedDate());
     }
 
 

@@ -7,7 +7,7 @@ public class Student {
     private int Id;
     private String Name;
     private String Dob;
-    private String JoninedDate;
+    private String JoinedDate;
 
 
 
@@ -25,7 +25,7 @@ public class Student {
         this.Dob = in.nextLine();
 
         System.out.print("Enter student' joined date: ");
-        this.JoninedDate = in.nextLine();
+        this.JoinedDate = in.nextLine();
 
         setStudentId();
     }
@@ -34,7 +34,7 @@ public class Student {
         Id = id;
         Name = name;
         Dob = dob;
-        JoninedDate = joninedDate;
+        JoinedDate = joninedDate;
     }
 
     public void setStudentId() {
@@ -55,7 +55,7 @@ public class Student {
         return Dob;
     }
 
-    public String getJoninedDate() {
-        return JoninedDate;
+    public String getJoinedDate() {
+        return JoinedDate;
     }
 }
