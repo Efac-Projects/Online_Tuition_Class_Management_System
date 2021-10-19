@@ -12,7 +12,7 @@ public class InMemorySessionDB implements SessionDataBase{
     }
 
     @Override
-    public List<Session> getSessions() {
-        return null;
+    public Map<String ,List<Session>>  getSessions() {
+        return sessionsDB;
     }
 }

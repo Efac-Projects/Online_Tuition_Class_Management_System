@@ -1,8 +1,9 @@
 package Session;
 
 import java.util.List;
+import java.util.Map;
 
 public interface SessionDataBase {
     void storeSession(String name, List<Session> sessions);
-    List<Session> getSessions();
+    Map<String ,List<Session>> getSessions();
 }

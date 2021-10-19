@@ -1,12 +1,14 @@
 
-/*
 import Class.SClass;
 import Class.ClassService;
 import ClassAssignment.ClassAssignmentService;
 import Student.Student;
 import Session.Session;
+import Session.InMemorySessionDB;
+import org.hamcrest.collection.IsMapContaining;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -23,13 +25,24 @@ public class InMemorySessionDBTest {
     public void want_to_store_session_when_create(){
 
         ClassService classes = mock(ClassService.class);
-        doNothing().when(classes).CreateClass("Math","Joy",10);
-        SClass sclass = new Sclass("11","Math","John");
-        //Session session = new Session("19-10-2021", "1pm - 2pm");
-        Session session = new Session("19-10-2021","1pm-2pm");
-        InMemorySessionDBTest store = new InMemorySessionDBTest(classes);
+        doNothing().when(classes).CreateClass();
+        SClass sclass = new SClass(2020,"Maths","Kamal");
+        Session session1 = new Session("19-10-2021", "1pm - 2pm");
+        Session session2 = new Session("19-10-2021","1pm-2pm");
 
-        store.storeSession(session);
-        assertThat(store.getSessions(), hasSize(1));
+        List<Session> sessions = new ArrayList<>();
+
+        sessions.add(session1);
+        sessions.add(session2);
+
+        InMemorySessionDB sessionDB = new InMemorySessionDB();
+        sessionDB.storeSession("2021 - Maths - Grade 10",sessions);
+
+        assertThat(sessionDB.getSessions(), IsMapContaining.hasEntry("2021 - Maths - Grade 10",sessions));
+        assertThat(sessionDB.getSessions(), IsMapContaining.hasKey("2021 - Maths - Grade 10"));
+        assertThat(sessionDB.getSessions(), IsMapContaining.hasValue(sessions));
+
+
+
     }
 }
